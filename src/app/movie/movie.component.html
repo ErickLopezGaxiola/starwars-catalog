@@ -1,0 +1,45 @@
+
+<div *ngIf="movie">
+  <app-breadcrumbs ></app-breadcrumbs>
+  <div class="row my-5 gy-3">
+    <div class="col-lg-3 col-xs-12 d-flex justify-content-center">
+      <img class="img-fliud rounded poster" src="../../assets/images/posters/{{movie.episode_id}}.jpg" alt="Movie Poster">
+    </div>
+    <div class="col-lg-9">
+      <div class="card bg-primary py-3 px-5 h-100">
+        <span class="fs-6 text-uppercase mt-4">Episode {{movie.episode_id}}</span>
+        <h2 class="fw-bold">Star Wars: {{movie.title}}</h2>
+        <hr>
+          <p class="text-black fs-6 my-0 fw-bold">
+            Release date: <span class="fw-light">{{movie.release_date}}</span>
+          </p>
+          <p class="text-black fs-6 my-0 fw-bold">
+            Directed by: <span class="fw-light">{{movie.director}}</span>
+          </p>
+          <p class="text-black fs-6 my-0 fw-bold">
+            Produced by: <span class="fw-light">{{movie.producer}}</span>
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-lg-7 col-xs-12">
+      <h4 class="mb-3 text-primary">Opening Crawl</h4>
+      <p>{{movie.opening_crawl}}</p>
+    </div>
+    <div class="col-lg-5">
+      <h4 class="mb-3 text-primary">Characters</h4>
+      <div class="d-flex align-items-center my-1 p-3 rounded character-link" *ngFor="let character of characters" routerLink="/character/{{character.url.split('/')[5]}}">
+        <div class="mx-2">
+          <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=C" alt="Character Image">
+        </div>
+          <h6 class="text-white">{{character.name}}</h6>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+

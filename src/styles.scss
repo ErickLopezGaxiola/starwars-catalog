@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+
+$primary: #FFE700;
+
+$body-bg: #111;
+
+p{
+  color: white;
+}
+
+li{
+  color: $primary;
+}
+
+.catalog-container{
+  max-width: 992px;
+}
+
+.catalog-card{
+  cursor: pointer;
+  background-color: #343a3f !important;
+  height: 100%;;
+  color: white;
+  transition: all .2s ease;
+  h4 {
+    color: $primary;
+  }
+  &:hover {
+    background-color: $primary !important;
+    color: black;
+    h4, p {
+      color: black;
+    }
+  }
+}
+
+.character-link{
+  cursor: pointer;
+  &:hover {
+    background-color: #343a3f;
+    color: black;
+  }
+}
+
+.relatedfilm-wrapper{
+  cursor: pointer;
+  &:hover {
+    background-color: #343a3f;
+  }
+}
+
+.poster{
+  object-fit: cover;
+  width: auto;
+  height: 350px;
+}
+
+.poster-related{
+  object-fit: cover;
+  width: auto;
+  height: 275px;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

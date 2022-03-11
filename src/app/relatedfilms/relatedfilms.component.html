@@ -1,0 +1,10 @@
+<div *ngIf="movies">
+  <h3 class="text-primary">Related Films</h3>
+
+  <div class="d-flex flex-wrap mb-5">
+    <div class="p-4 relatedfilm-wrapper" *ngFor="let movie of movies" routerLink="/movie/{{movie.url.split('/')[5]}}">
+      <img class="img-fliud rounded poster-related" src="../../assets/images/posters/{{movie.episode_id}}.jpg" alt="Movie Poster">
+      <p class="mt-2 fw-bold text-primary text-center">{{movie.title}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<app-breadcrumbs></app-breadcrumbs>
+
+<div *ngIf="character">
+  <div class="row my-5 gy-3">
+    <div class="col-lg-3 col-xs-12 d-flex justify-content-center">
+      <img class="img-fliud rounded" src="https://via.placeholder.com/250x250?text=Character+Image" alt="Charater Image">
+    </div>
+    <div class="col-lg-9">
+      <div class="card bg-primary py-3 px-5 h-100">
+        <h2 class="mt-3">{{character.name}}</h2>
+        <hr>
+        <div class="row">
+          <div class="col-sm-4">
+            <p class="fs-6 text-black my-0 fw-bold">
+              Birth date: <span class="fw-light">{{character.birth_year}}</span>
+            </p>
+            <p class="fs-6 text-black my-0 fw-bold">
+              Gender: <span class="fw-light">{{character.gender}}</span>
+            </p>
+            <p class="fs-6 text-black my-0 fw-bold">
+              Hair color: <span class="fw-light">{{character.hair_color}}</span>
+            </p>
+            <p class="fs-6 text-black my-0 fw-bold">
+              Eye color: <span class="fw-light">{{character.eye_color}}</span>
+            </p>
+          </div>
+          <div class="col-sm-8">
+            <div class="h-100 d-flex flex-wrap justify-content-end align-items-end mt-2 w-100">
+              <button (click)="onHomeworldSelected()" type="button" class="btn btn-outline-dark mx-2">Homeworld</button>
+              <button (click)="onRelatedSelected()" type="button" class="btn btn-outline-dark">Related Movies</button>
+            </div>
+          </div>
+        </div>
+         
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="homeworldSelected">
+    <app-homeworld [homeworld]="character.homeworld" ></app-homeworld>
+  </div>
+  <div *ngIf="relatedSelected">
+    <app-relatedfilms [relatedfilms]="character.films" ></app-relatedfilms>
+  </div>
+</div>
+
+
